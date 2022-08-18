@@ -3,23 +3,24 @@
 82 -> 10
 9012 -> 12*/
 
-Console.Write("Введи число ");
-string? a = Console.ReadLine();
-int i = 0;
-for (; a.Length > i; )
-{
-    i++;
-}
-Console.WriteLine(i);
-int[] num = new int [i];
-Console.WriteLine(num.Length);
+Console.Write("Введите число ");
+int num = Convert.ToInt32(Console.ReadLine());
 
-for (int n = 0; i <= num.Length;)
-{
-   n = 12;
-   num[0] = n;
-   i--;
-   Console.WriteLine(i);
-}
+  int Sum(int num)
+  {
+    
+    int counter = Convert.ToString(num).Length;
+    int n = 0;
+    int result = 0;
 
+    for (int i = 0; i < counter; i++)
+    {
+      n = num - num % 10;
+      result = result + (num - n);
+      num = num / 10;
+    }
+   return result;
+  }
 
+int sum = Sum(num);
+Console.WriteLine("Сумма " + sum);
